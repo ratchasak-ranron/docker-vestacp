@@ -120,7 +120,7 @@ RUN dpkg-reconfigure locales && \
     locale-gen en_US.UTF-8 && \
     update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
-RUN mkdir -p /vesta-start/usr/sbin \
+RUN mkdir -p /vesta-start/usr \
     && mv /usr/sbin /vesta-start/usr/sbin \
     && rm -rf /usr/sbin \
     && ln -s /vesta/usr/sbin /usr/sbin
