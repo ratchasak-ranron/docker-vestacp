@@ -34,6 +34,24 @@ RUN mkdir /vesta-start \
     && mv /home /vesta-start/home \
     && rm -rf /home \
     && ln -s /vesta/home /home \
+    && mv /etc/gshadow /vesta-start/etc/gshadow \
+    && rm -rf /etc/gshadow \
+    && ln -s /vesta/etc/gshadow /etc/gshadow \
+    && mv /etc/group /vesta-start/etc/group \
+    && rm -rf /etc/group \
+    && ln -s /vesta/etc/group /etc/group \
+    && mv /etc/subgid /vesta-start/etc/subgid \
+    && rm -rf /etc/subgid \
+    && ln -s /vesta/etc/subgid /etc/subgid \
+    && mv /etc/shadow /vesta-start/etc/shadow \
+    && rm -rf /etc/shadow \
+    && ln -s /vesta/etc/shadow /etc/shadow \
+    && mv /etc/passwd /vesta-start/etc/passwd \
+    && rm -rf /etc/passwd \
+    && ln -s /vesta/etc/passwd /etc/passwd \
+    && mv /etc/subuid /vesta-start/etc/subuid \
+    && rm -rf /etc/subuid \
+    && ln -s /vesta/etc/subuid /etc/subuid \
     && mv /etc/apache2 /vesta-start/etc/apache2 \
     && rm -rf /etc/apache2 \
     && ln -s /vesta/etc/apache2 /etc/apache2 \
