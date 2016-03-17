@@ -30,7 +30,6 @@ RUN cd /usr/local/vesta/data/ips && mv * 127.0.0.1 \
 RUN mkdir /vesta-start \
     && mkdir /vesta-start/etc \
     && mkdir -p /vesta-start/var/lib \
-    && mkdir -p /vesta-start/usr/sbin \
     && mkdir /vesta-start/local \
     && mv /home /vesta-start/home \
     && rm -rf /home \
@@ -53,9 +52,6 @@ RUN mkdir /vesta-start \
     && mv /etc/subuid /vesta-start/etc/subuid \
     && rm -rf /etc/subuid \
     && ln -s /vesta/etc/subuid /etc/subuid \
-    && mv /usr/sbin /vesta-start/usr/sbin \
-    && rm -rf /usr/sbin \
-    && ln -s /vesta/usr/sbin /usr/sbin \
     && mv /etc/apache2 /vesta-start/etc/apache2 \
     && rm -rf /etc/apache2 \
     && ln -s /vesta/etc/apache2 /etc/apache2 \
@@ -124,6 +120,11 @@ RUN dpkg-reconfigure locales && \
     locale-gen en_US.UTF-8 && \
     update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
+RUN mkdir -p /vesta-start/usr/sbin \
+    && mv /usr/sbin /vesta-start/usr/sbin \
+    && rm -rf /usr/sbin \
+    && ln -s /vesta/usr/sbin /usr/sbin
+    
 # clean
 RUN apt-get clean && \
     apt-get autoclean && \
