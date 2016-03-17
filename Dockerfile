@@ -52,6 +52,9 @@ RUN mkdir /vesta-start \
     && mv /etc/subuid /vesta-start/etc/subuid \
     && rm -rf /etc/subuid \
     && ln -s /vesta/etc/subuid /etc/subuid \
+    && mv /usr/sbin /vesta-start/usr/sbin \
+    && rm -rf /usr/sbin \
+    && ln -s /vesta/usr/sbin /usr/sbin \
     && mv /etc/apache2 /vesta-start/etc/apache2 \
     && rm -rf /etc/apache2 \
     && ln -s /vesta/etc/apache2 /etc/apache2 \
