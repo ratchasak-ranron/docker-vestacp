@@ -30,6 +30,7 @@ RUN cd /usr/local/vesta/data/ips && mv * 127.0.0.1 \
 RUN mkdir /vesta-start \
     && mkdir /vesta-start/etc \
     && mkdir -p /vesta-start/var/lib \
+    && mkdir -p /vesta-start/usr/sbin \
     && mkdir /vesta-start/local \
     && mv /home /vesta-start/home \
     && rm -rf /home \
